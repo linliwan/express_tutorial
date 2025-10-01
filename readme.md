@@ -1,9 +1,25 @@
 # 初始化本项目：
+- backend目录为express.js
+- frontend目录为web前端的js脚本，全部采用ts编写，可以build到backend/public/js目录中
+
+```bash
+# backend项目初始化：
+cd backend
 npm init -y
 npm install sqlite3 sqlite
 npm install express @types/express 
-npm install concurrently
 npm install ejs
+
+# 开发环境需要jest
+npm install -D jest ts-jest @types/jest
+
+
+# frontend项目初始化：
+cd frontend
+npm init -y
+
+# 进一步的设置，请参考各自的package.json
+```
 
 # 本项目教学思路：
 - 基于上一章的成果，已经实现了ConnectionManager和express的基础框架

@@ -1,0 +1,8 @@
+{
+  "name": "frontend",
+  "scripts": {
+    "dev": "tsc -w",
+    "build": "tsc"
+  },
+  "type": "module"
+}

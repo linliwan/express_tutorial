@@ -54,32 +54,7 @@ header {
     color: white;
 }
 
-.search {
-    height: 40px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
 
-.search input {
-    height: 100%;
-    padding: 0 10px;
-    border: none;
-    border-radius: 5px;
-}
-
-.search button {
-    height: 100%;
-    padding: 0 10px;
-    background-color: #ffcb22;
-    font-weight: bold;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 .admin a {
     color: white;
     text-decoration: none;
