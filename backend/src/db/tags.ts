@@ -1,9 +1,13 @@
 import { ConnectionManager } from "./ConnectionManager.ts";
 import type { Tag } from "../types/tag.ts";
+import { options } from '../config.ts';
+
+// 获取当前环境的数据库实例
+const dbManager = ConnectionManager.getInstance(options.env);
 
 async function getAllTags(): Promise<Tag[]> {
     try {
-        const db = await ConnectionManager.getConnection();
+        const db = await dbManager.getConnection();
         const tags = await db.all("SELECT id, name FROM tags");
         // console.log(tags);
         return tags;
@@ -15,7 +19,7 @@ async function getAllTags(): Promise<Tag[]> {
 
 export async function getTagsByBlogId(blogId: number): Promise<Tag[]> {
     try {
-        const db = await ConnectionManager.getConnection();
+        const db = await dbManager.getConnection();
         const query = `
         SELECT t.id, t.name
         FROM tags t

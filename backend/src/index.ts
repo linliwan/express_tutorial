@@ -1,8 +1,20 @@
 import { createApp } from "./utils/createApp.ts";
+import { options, PORT } from "./config.ts";
 
-const app = createApp({ enableWeb: true, enableApi: true });
-const PORT = 8012;
+async function startServer() {
+    try {
+        // 创建应用
+        const app = await createApp(options);
 
-app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
-});
+        // 启动服务器
+        app.listen(PORT, () => {
+            console.log(`Server is running on http://localhost:${PORT}`);
+        });
+    } catch (error) {
+        console.error("Failed to start server:", error);
+        process.exit(1);
+    }
+}
+
+// 启动服务器
+startServer();

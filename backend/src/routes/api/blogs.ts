@@ -1,5 +1,5 @@
 import express from "express";
-import { getAllBlogs, getBlogById, getBlogsByTagId, createBlog, deleteBlogById, updateBlogById } from "../../db/blogs";
+import { getAllBlogs, getBlogById, getBlogsByTagId, createBlog, deleteBlogById, updateBlogById } from "../../db/blogs.ts";
 
 const router = express.Router();
 
