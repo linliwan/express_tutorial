@@ -30,7 +30,7 @@ export class ConnectionManager {
                     filename: './data/dev.sqlite',
                     driver: sqlite3.Database,
                 });
-                // 启用外键约束（SQLite 默认关闭）
+                // 启用外键约束(SQLite 默认关闭)
                 await this.db.exec('PRAGMA foreign_keys = ON;');
                 console.log('数据库连接已建立！');
             }

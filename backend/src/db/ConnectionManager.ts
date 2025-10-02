@@ -15,7 +15,7 @@ export class ConnectionManager {
         this.env = env;
     }
 
-    // 获取指定环境的实例（单例），默认为开发环境
+    // 获取指定环境的实例(单例)，默认为开发环境
     public static getInstance(env: Environment = 'dev'): ConnectionManager {
         if (!this.instances.has(env)) {
             this.instances.set(env, new ConnectionManager(env));
@@ -31,7 +31,7 @@ export class ConnectionManager {
                     filename: dbPath,
                     driver: sqlite3.Database,
                 });
-                // 启用外键约束（SQLite 默认关闭）
+                // 启用外键约束(SQLite 默认关闭)
                 await this.db.exec('PRAGMA foreign_keys = ON;');
             }
             return this.db;
