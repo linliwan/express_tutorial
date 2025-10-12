@@ -15,3 +15,6 @@
 
 2. 初始化数据库，编写数据库读写的相关接口
 [查看详细文档](./docs/02_backend_database.md)
+
+3. 编写createBlog和updateBlogById两个接口函数，涉及数据库事务
+[查看详细文档](./docs/03_backend_database_cont.md)
