@@ -1,6 +1,7 @@
 import express from "express";
 import { closeConnection } from "./db/ConnectionManager.ts";
 import { blogs as apiBlogsRoute } from "./routes/api/index.ts";
+import {blogs as webBlogsRoute, admin as webAdminRoute} from "./routes/web/index.ts";
 
 const app = express();
 const PORT = 3000;
@@ -13,11 +14,15 @@ app.use(express.json()); // 解析JSON请求体
 app.use(express.urlencoded({ extended: true })); // 解析URL编码的请求体
 
 app.get("/", (req, res) => { 
-    res.render("home.ejs", { title: "Home Page" });
+    res.redirect("/web/blogs");    // 重定向到WEB首页
 });
 
 // 配置API路由
 app.use("/api/blogs", apiBlogsRoute);
+
+// 配置WEB路由
+app.use("/web/blogs", webBlogsRoute);
+app.use("/web/admin", webAdminRoute);
 
 // 处理未找到的路由
 app.use((req, res) => {

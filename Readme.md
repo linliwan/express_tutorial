@@ -21,3 +21,6 @@
 
 4. 设计API路由
 [查看详细文档](./docs/04_backend_api_routes.md)
+
+5. 设计WEB路由
+[查看详细文档](./docs/05_backend_web_routes.md)

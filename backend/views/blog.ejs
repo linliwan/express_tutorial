@@ -7,12 +7,14 @@
     <link rel="stylesheet" href="/css/output.css">
 </head>
 <body>
-    <h1 class="text-xl text-indigo-600 font-bold"><%= title %></h1>
-
+    <p class="text-red-500">All tags info:</p>
     <%= JSON.stringify(tags) %>
+    <hr>
+    <p class="text-red-500">Blog info:</p>
+    <%= JSON.stringify(blog) %>
+    <hr>
+    <p class="text-red-500">This blog related tags info:</p>
+    <%= JSON.stringify(blogTags) %>
 
-    <% if (locals.script_name) { %>
-        <script type="module" src="/js/<%= script_name %>"></script>
-    <% } %>
 </body>
 </html>
