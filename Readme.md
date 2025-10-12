@@ -18,3 +18,6 @@
 
 3. 编写createBlog和updateBlogById两个接口函数，涉及数据库事务
 [查看详细文档](./docs/03_backend_database_cont.md)
+
+4. 设计API路由
+[查看详细文档](./docs/04_backend_api_routes.md)
