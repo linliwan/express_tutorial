@@ -33,3 +33,10 @@
 
 7. WEB页面实现
 [查看详细文档](./docs/07_web_implement.md)
+
+## Backend/Frontend 部分
+8. bytag查询页面实现
+[查看详细文档](./docs/08_bytag_web_implement.md)
+
+9. admin页面实现
+[查看详细文档](./docs/09_admin_web_implement.md)
