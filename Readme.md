@@ -40,3 +40,7 @@
 
 9. admin页面实现
 [查看详细文档](./docs/09_admin_web_implement.md)
+
+## 性能优化 部分
+10. getAllTags的缓存实现
+[查看详细文档](./docs/10_getAlltags_cached.md)
