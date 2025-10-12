@@ -13,3 +13,5 @@
 1. 搭建项目脚手架
 [查看详细文档](./docs/01_backend_init.md)
 
+2. 初始化数据库，编写数据库读写的相关接口
+[查看详细文档](./docs/02_backend_database.md)
