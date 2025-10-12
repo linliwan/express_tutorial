@@ -62,7 +62,7 @@ app.listen(PORT, () => {
 </html>
 
 ```
-## 用npm run dev启动项目
+## 编辑package.json, 用npm run dev启动项目
 
 ## 附录1： 完整的package.json的配置
 

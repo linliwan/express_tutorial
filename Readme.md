@@ -1,5 +1,15 @@
-# Backend 部分 工作记录
+# An express.js case tutorial
 
+这是一个express.js的示例项目，旨在搭建一个简易的blog系统，我们将从构建项目脚手架开始，一步步的记录整个项目的搭建过程。
+- 使用express.js构建项目，数据库采用SQLite；
+- 使用tailwind css书写页面的样式；
+- 使用Typescript书写代码；
+
+为了简化，便于初学者理解，本项目计划不采用前后端分离的模式搭建，也就是说一套express.js将同时负责后端的API以及前端的WEB路由构建。
+- backend目录为express.js
+- frontend目录存放html的设计参考，以及存放为WEB页面写的ts脚本，通过tsc自动转换为js到./backend/public/js目录中，以供ejs调用。
+
+## Backend 部分
 1. 搭建项目脚手架
 [查看详细文档](./docs/01_backend_init.md)
 
