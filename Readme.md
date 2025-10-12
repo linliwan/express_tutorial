@@ -9,6 +9,8 @@
 - backend目录为express.js
 - frontend目录存放html的设计参考，以及存放为WEB页面写的ts脚本，通过tsc自动转换为js到./backend/public/js目录中，以供ejs调用。
 
+我将每一步步骤放在不同的分支中，可以通过切换分支查看每一步的实现过程。
+
 ## Backend 部分
 1. 搭建项目脚手架
 [查看详细文档](./docs/01_backend_init.md)
@@ -24,3 +26,6 @@
 
 5. 设计WEB路由
 [查看详细文档](./docs/05_backend_web_routes.md)
+
+6. WEB页面实现
+[查看详细文档](./docs/06_web_implement.md)
