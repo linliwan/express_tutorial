@@ -1,50 +1,97 @@
-# 初始化本项目：
+# An express.js case tutorial
+
+这是一个express.js的示例项目，旨在搭建一个简易的blog系统，我们将从构建项目脚手架开始，一步步的记录整个项目的搭建过程。
+- 使用express.js构建项目，数据库采用SQLite；
+- 使用Typescript书写代码；
+
+为了简化，便于初学者理解，本项目计划不采用前后端分离的模式搭建，也就是说一套express.js将同时负责后端的API以及前端的WEB路由构建。
 - backend目录为express.js
-- frontend目录为web前端的js脚本，全部采用ts编写，可以build到backend/public/js目录中
+- frontend目录存放html的设计参考，以及存放为WEB页面写的ts脚本，通过tsc自动转换为js到./backend/public/js目录中，以供ejs调用。
+
+## 这是包含jest测试的版本
+- 该版本没有采用tailwind CSS
+- 该版本的backend部分包含了jest测试案例，用于对backend/src/db下的代码进行测试，并给出测试报告
 
 ```bash
-# backend项目初始化：
+# 安装jest包
 cd backend
-npm init -y
-npm install sqlite3 sqlite
-npm install express @types/express 
-npm install ejs
 
-# 开发环境需要jest
 npm install -D jest ts-jest @types/jest
 
+```
+## backend/jest.config.js配置如下：
+```javascript
+// jest.config.js
+const baseDir = '<rootDir>/src/db';
+const baseTestDir = '<rootDir>/src/__tests__';
 
-# frontend项目初始化：
-cd frontend
-npm init -y
+const config = {
+    preset: "ts-jest",
+    testEnvironment: "node",
+    verbose: true,
+    collectCoverage: true,
+    collectCoverageFrom: [
+        `${baseDir}/**/*.ts`,
+        // 排除不需要测试的文件
+        `!${baseTestDir}/**/*.ts`,           // 排除测试文件
+        `!${baseDir}/**/index.ts`,           // 排除所有 index.ts 文件
+        `!${baseDir}/config.ts`,             // 排除配置文件
+        `!${baseDir}/types/**/*.ts`,         // 排除类型定义文件
+    ],
+    testMatch: [
+        `${baseTestDir}/**/*.test.ts`
+    ]
+};
 
-# 进一步的设置，请参考各自的package.json
+export default config;
+```
+## backend/package.json配置如下：
+```json
+{
+  "name": "backend",
+  "scripts": {
+    "dev": "tsx watch ./src/index.ts",
+    "test": "jest",
+    "build": "tsc"
+  },
+  "type": "module",
+  "dependencies": {
+    "@types/express": "^5.0.3",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "sqlite": "^5.1.1",
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "jest": "^30.2.0",
+    "ts-jest": "^29.4.4"
+  }
+}
+
 ```
 
-# 本项目教学思路：
-- 基于上一章的成果，已经实现了ConnectionManager和express的基础框架
-- 本章引入ejs，要实现一个简易的blog系统，通过多种维度展示数据，还需要实现基本的增、删、改
+## 本项目的ConnectionManager.ts相比之前的要复杂一些
+- 采用了class进行设计
+- 可以先从lite版入手，对比和之前版本使用上的差别
+- 为了配合jest测试案例的编写，专门设计了新的ConnectionManager.ts，这个版本可以在new的时候指定环境变量，将开发、生产、测试的数据分开
 
-# 任务
-- 1、pages.ts的路由设计；
-- 2、实现blog首页面的导航条，用server rendering的方式实现，将查询到的tags数据传递给index.ejs；
-- 3、实现ejs的模版化，将header、main、footer拆分开来，从而实现复用；
-- 4、实现index.ejs的blog展现，blog数据通过fetch获取，然后用client rendring展现在首页；
-- 5、在index.ejs上实现paging导航，这一步难度稍高；
-- 6、实现基于tag查询blog，并展现，依旧是用client rendering；
-- 7、实现单个blog数据的展现，这里采用server rendering，写一个单独的ejs模板；
-- 8、admin页面，实现对blogs的增、删、改（有多种方法实现，依据个人喜好，现实中SSR和CSR混用较多，尤其是开发简单、快速的小型应用时）；
-- 9、额外任务：自己写路由，实现对users的增、删、改、查
+## 本案例的backend/src/index.ts也进行了新的设计
+- 设计了createApp function，可以在启动express的时候选择一些开关：
+  - 是否启用api路由
+  - 是否启用web路由
+  - 指定数据库环境：开发、测试、生产
+  - 启动的时候自动初始化sqlite数据库（建表）
 
 
-# 能够独立完成本章内容，即意味着
-- 已经具备基础的全栈开发能力（前端、后端）；
-- 对js、ts已经入门，能够编写较复杂的逻辑，实现客户需求；
-- 具备了基础的项目规划能力，能够通过模块化实现可扩展；
-- 80%的人坚持不到这里
+## 备注：jest的一些关键字
+### test properties:
+- only
+- skip
+- todo
 
-
-# 接下来还需要
-- 扩展面向对象编程的能力，目的是提高代码阅读理解能力，因为大部分的第三方工具，都是封装成对象的；
-- 扩展数据库的认知，sqlite不适合大型项目，但是sql语句是通用的，所以再尝试一款新的数据库软件，试着用代码操控它；
-- 很多轮子都是现成的，不用自己徒手造，学会拿来主义，用第三方模块快速实现自己的想法；
+### test alias:
+- test
+- it
+- xit  : it.skip
+- fit  : it.only

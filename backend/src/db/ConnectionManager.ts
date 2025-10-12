@@ -47,6 +47,7 @@ export class ConnectionManager {
         }
     }
 
+    // 初始化数据库表
     public async initializeDatabase(): Promise<void> {
         try {
             const db = await this.getConnection();
