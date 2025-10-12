@@ -14,6 +14,19 @@ router.get('/', async (req, res) => {
     }
 });
 
+
+router.get('/tags', async (req, res) => {
+    const tag = Number(req.query.tag);
+    try {
+        const tags: Tag[] = await getAllTags();
+        let tagName: string = tags.find((t: any) => t.id === tag)?.name || 'Unknown';
+        res.render('home.ejs', { title: `Easy Blog - ${tagName}`, script_name: 'tag.js', tags });
+    } catch (error) {
+        console.error('Error fetching tags:', error);
+        res.status(500).render('error', { title: 'Error', image_name: '500.png' });
+    }
+});
+
 router.get('/:id', async (req, res) => {
     const id = Number(req.params.id);
     try {
@@ -29,5 +42,7 @@ router.get('/:id', async (req, res) => {
         res.status(500).render('error', { title: 'Error', image_name: '500.png' });
     }
 });
+
+
 
 export default router;

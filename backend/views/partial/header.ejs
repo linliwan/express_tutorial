@@ -19,7 +19,7 @@
                 </li>
                 <% locals.tags && locals.tags.forEach(tag => { %>
                     <li class="text-white hover:text-yellow-500">
-                        <a href="#"><%= tag.name %></a>
+                        <a href="/web/blogs/tags?tag=<%= tag.id %>"><%= tag.name %></a>
                     </li>
                 <% }); %>
             </ul>

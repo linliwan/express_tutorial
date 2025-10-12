@@ -433,6 +433,22 @@
 .tags li.tag_5 {
   background-color: lightpink;
 }
+.blogByTagList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.blogByTag {
+  height: 180px;
+  flex-direction: row;
+  gap: 10px;
+}
+.blogByTag .image {
+  flex: 1 0 0;
+}
+.blogByTag .content {
+  flex: 3 0 0;
+}
 @property --tw-border-style {
   syntax: "*";
   inherits: false;

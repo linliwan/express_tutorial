@@ -1,7 +1,6 @@
 @import "tailwindcss";
 
 /* Blog格子样式，这里直接copy原版原生CSS设计 */
-
 .blogGrid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -95,7 +94,7 @@
 }
 
 
-/* byBlogId页面，不同的标签显示不同的颜色，预定义好class，写起来方便一些*/
+/* byBlogId页面，不同的标签显示不同的颜色，预定义好class，js中写起来方便一些*/
 
 .tags {
     list-style-type: none;
@@ -123,3 +122,22 @@
     background-color: lightpink;
 }
 
+
+/* byTag 页面 , 照搬原版设计*/
+.blogByTagList {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.blogByTag {
+    height: 180px;
+    flex-direction: row;
+    gap: 10px;
+}
+.blogByTag .image {
+    flex: 1 0 0;
+}
+.blogByTag .content {
+    flex: 3 0 0;
+}
