@@ -93,3 +93,33 @@
 .pagination button.disabled:hover {
     @apply bg-white;
 }
+
+
+/* byBlogId页面，不同的标签显示不同的颜色，预定义好class，写起来方便一些*/
+
+.tags {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+}
+.tags li {
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+.tags li.tag_1 {
+    background-color: lightblue;
+}
+.tags li.tag_2 {
+    background-color: lightseagreen;
+}
+.tags li.tag_3 {
+    background-color: lightcoral;
+}
+.tags li.tag_4 {
+    background-color: lightgray;
+}
+.tags li.tag_5 {
+    background-color: lightpink;
+}
+

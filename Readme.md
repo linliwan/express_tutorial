@@ -27,5 +27,9 @@
 5. 设计WEB路由
 [查看详细文档](./docs/05_backend_web_routes.md)
 
+## Frontend 部分
 6. WEB页面实现
 [查看详细文档](./docs/06_web_implement.md)
+
+7. WEB页面实现
+[查看详细文档](./docs/07_web_implement.md)
