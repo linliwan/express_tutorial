@@ -10,7 +10,8 @@ export async function getAllBlogs(offset: number, limit: number): Promise<BlogsR
             FROM blogs as b
             JOIN users u on u.id = b.user_id
             ORDER BY b.created_at DESC
-            LIMIT ? OFFSET ?`;
+            LIMIT ? OFFSET ?
+        `;
         const blogs = await db.all(query, [limit, offset]);
         const totalBlogs = await db.get("SELECT COUNT(*) as count FROM blogs");
         return { total: totalBlogs.count, data: blogs };
@@ -27,7 +28,8 @@ export async function getBlogById(id: number): Promise<Blog | undefined> {
             SELECT b.id, b.title, b.content, b.img, b.published, b.user_id, b.created_at, u.username
             FROM blogs as b
             JOIN users u on u.id = b.user_id
-            WHERE b.id = ?`;
+            WHERE b.id = ?
+        `;
         const blog = await db.get(query, [id]);
         return blog;
     } catch (error) {
@@ -46,9 +48,10 @@ export async function getBlogsByTagId(tagId: number, offset: number, limit: numb
             JOIN blog_tags bt ON b.id = bt.blog_id
             WHERE bt.tag_id = ?
             ORDER BY b.created_at DESC
-            LIMIT ? OFFSET ?`;
-        const blogs = await db.all(query, [Number(tagId), Number(limit), Number(offset)]);
-        const totalBlogs = await db.get("SELECT COUNT(*) as count FROM blogs b JOIN blog_tags bt ON b.id = bt.blog_id WHERE bt.tag_id = ?", [Number(tagId)]);
+            LIMIT ? OFFSET ?
+        `;
+        const blogs = await db.all(query, [tagId, limit, offset]);
+        const totalBlogs = await db.get("SELECT COUNT(*) as count FROM blogs b JOIN blog_tags bt ON b.id = bt.blog_id WHERE bt.tag_id = ?", [tagId]);
         return { total: totalBlogs.count, data: blogs };
     } catch (error) {
         console.error("Error fetching blogs by tag:", error);
