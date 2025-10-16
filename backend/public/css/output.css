@@ -175,6 +175,7 @@
   .hidden {
     display: none;
   }
+<<<<<<< HEAD
   .table {
     display: table;
   }
@@ -203,6 +204,8 @@
     border-style: var(--tw-border-style);
     border-width: 1px;
   }
+=======
+>>>>>>> step03
   .text-xl {
     font-size: var(--text-xl);
     line-height: var(--tw-leading, var(--text-xl--line-height));
@@ -214,6 +217,7 @@
   .text-indigo-600 {
     color: var(--color-indigo-600);
   }
+<<<<<<< HEAD
   .text-red-500 {
     color: var(--color-red-500);
   }
@@ -229,22 +233,17 @@
   syntax: "*";
   inherits: false;
   initial-value: solid;
+=======
+>>>>>>> step04
 }
 @property --tw-font-weight {
   syntax: "*";
   inherits: false;
 }
-@property --tw-outline-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
-}
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
-      --tw-border-style: solid;
       --tw-font-weight: initial;
-      --tw-outline-style: solid;
     }
   }
 }

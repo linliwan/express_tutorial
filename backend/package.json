@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "concurrently \"tsx watch ./src/index.ts\" \"npx @tailwindcss/cli -i ./public/css/input.css -o ./public/css/output.css --watch\"",
-    "build" : "tsc",
-    "buildcss": "npx @tailwindcss/cli -i ./public/css/input.css -o ./public/css/output.css --minify"
+    "build": "tsc",
+    "buildcss": "npx @tailwindcss/cli -i ./public/css/input.css -o ./public/css/output.css --minify",
+    "test": "tsx ./src/db/temp_test.ts"
   },
   "type": "module",
   "dependencies": {
