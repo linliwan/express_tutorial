@@ -222,6 +222,7 @@
   .hidden {
     display: none;
   }
+<<<<<<< HEAD
   .h-8 {
     height: calc(var(--spacing) * 8);
   }
@@ -233,6 +234,19 @@
   }
   .h-full {
     height: 100%;
+=======
+<<<<<<< HEAD
+  .h-full {
+    height: 100%;
+=======
+<<<<<<< HEAD
+  .table {
+    display: table;
+  }
+  .h-96 {
+    height: calc(var(--spacing) * 96);
+>>>>>>> step05
+>>>>>>> step06
   }
   .min-h-screen {
     min-height: 100vh;
@@ -286,6 +300,7 @@
     border-style: var(--tw-border-style);
     border-width: 1px;
   }
+<<<<<<< HEAD
   .bg-green-600 {
     background-color: var(--color-green-600);
   }
@@ -294,6 +309,11 @@
   }
   .bg-stone-400 {
     background-color: var(--color-stone-400);
+=======
+<<<<<<< HEAD
+  .border-red-300 {
+    border-color: var(--color-red-300);
+>>>>>>> step06
   }
   .bg-stone-800 {
     background-color: var(--color-stone-800);
@@ -318,6 +338,7 @@
   }
   .px-16 {
     padding-inline: calc(var(--spacing) * 16);
+<<<<<<< HEAD
   }
   .py-1 {
     padding-block: calc(var(--spacing) * 1);
@@ -339,11 +360,33 @@
   .leading-relaxed {
     --tw-leading: var(--leading-relaxed);
     line-height: var(--leading-relaxed);
+=======
+=======
+=======
+>>>>>>> step03
+  .text-xl {
+    font-size: var(--text-xl);
+    line-height: var(--tw-leading, var(--text-xl--line-height));
+>>>>>>> step05
+>>>>>>> step06
   }
   .font-bold {
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
   }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+  .text-indigo-600 {
+    color: var(--color-indigo-600);
+  }
+<<<<<<< HEAD
+>>>>>>> step05
+  .text-red-500 {
+    color: var(--color-red-500);
+  }
+>>>>>>> step06
   .text-white {
     color: var(--color-white);
   }
