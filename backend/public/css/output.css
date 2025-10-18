@@ -225,11 +225,14 @@
 <<<<<<< HEAD
   .h-8 {
     height: calc(var(--spacing) * 8);
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
   .table {
     display: table;
 >>>>>>> step05
+=======
+>>>>>>> step10
   }
   .h-64 {
     height: calc(var(--spacing) * 64);
@@ -239,6 +242,19 @@
   }
   .h-full {
     height: 100%;
+=======
+<<<<<<< HEAD
+  .h-full {
+    height: 100%;
+=======
+<<<<<<< HEAD
+  .table {
+    display: table;
+  }
+  .h-96 {
+    height: calc(var(--spacing) * 96);
+>>>>>>> step05
+>>>>>>> step06
   }
   .min-h-screen {
     min-height: 100vh;
@@ -301,6 +317,11 @@
   }
   .bg-stone-400 {
     background-color: var(--color-stone-400);
+=======
+<<<<<<< HEAD
+  .border-red-300 {
+    border-color: var(--color-red-300);
+>>>>>>> step06
   }
   .bg-stone-800 {
     background-color: var(--color-stone-800);
@@ -325,6 +346,7 @@
   }
   .px-16 {
     padding-inline: calc(var(--spacing) * 16);
+<<<<<<< HEAD
   }
   .py-1 {
     padding-block: calc(var(--spacing) * 1);
@@ -339,10 +361,13 @@
     font-size: var(--text-2xl);
     line-height: var(--tw-leading, var(--text-2xl--line-height));
   }
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> step03
 >>>>>>> step05
+=======
+>>>>>>> step10
   .text-xl {
     font-size: var(--text-xl);
     line-height: var(--tw-leading, var(--text-xl--line-height));
@@ -350,26 +375,54 @@
   .leading-relaxed {
     --tw-leading: var(--leading-relaxed);
     line-height: var(--leading-relaxed);
+=======
+=======
+=======
+>>>>>>> step03
+  .text-xl {
+    font-size: var(--text-xl);
+    line-height: var(--tw-leading, var(--text-xl--line-height));
+>>>>>>> step05
+>>>>>>> step06
   }
   .font-bold {
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
   }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+  .text-indigo-600 {
+    color: var(--color-indigo-600);
+  }
+<<<<<<< HEAD
+>>>>>>> step05
+  .text-red-500 {
+    color: var(--color-red-500);
+  }
+>>>>>>> step06
   .text-white {
     color: var(--color-white);
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> step10
   .hover\:bg-green-500 {
     &:hover {
       @media (hover: hover) {
         background-color: var(--color-green-500);
       }
     }
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
   .text-red-500 {
     color: var(--color-red-500);
 >>>>>>> step05
+=======
+>>>>>>> step10
   }
   .hover\:text-yellow-500 {
     &:hover {
@@ -617,8 +670,6 @@
   syntax: "*";
   inherits: false;
   initial-value: solid;
-=======
->>>>>>> step04
 }
 @property --tw-leading {
   syntax: "*";
@@ -628,15 +679,26 @@
   syntax: "*";
   inherits: false;
 }
+@property --tw-outline-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
+<<<<<<< HEAD
 <<<<<<< HEAD
       --tw-border-style: solid;
       --tw-leading: initial;
 =======
 >>>>>>> step05
+=======
+      --tw-border-style: solid;
+      --tw-leading: initial;
+>>>>>>> step10
       --tw-font-weight: initial;
+      --tw-outline-style: solid;
     }
   }
 }
