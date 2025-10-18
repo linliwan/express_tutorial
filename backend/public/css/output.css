@@ -212,8 +212,17 @@
   .hidden {
     display: none;
   }
+<<<<<<< HEAD
   .h-full {
     height: 100%;
+=======
+<<<<<<< HEAD
+  .table {
+    display: table;
+  }
+  .h-96 {
+    height: calc(var(--spacing) * 96);
+>>>>>>> step05
   }
   .min-h-screen {
     min-height: 100vh;
@@ -243,6 +252,7 @@
     border-style: var(--tw-border-style);
     border-width: 1px;
   }
+<<<<<<< HEAD
   .border-red-300 {
     border-color: var(--color-red-300);
   }
@@ -257,11 +267,25 @@
   }
   .px-16 {
     padding-inline: calc(var(--spacing) * 16);
+=======
+=======
+>>>>>>> step03
+  .text-xl {
+    font-size: var(--text-xl);
+    line-height: var(--tw-leading, var(--text-xl--line-height));
+>>>>>>> step05
   }
   .font-bold {
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
   }
+<<<<<<< HEAD
+=======
+  .text-indigo-600 {
+    color: var(--color-indigo-600);
+  }
+<<<<<<< HEAD
+>>>>>>> step05
   .text-red-500 {
     color: var(--color-red-500);
   }
@@ -377,6 +401,8 @@
   syntax: "*";
   inherits: false;
   initial-value: solid;
+=======
+>>>>>>> step04
 }
 @property --tw-font-weight {
   syntax: "*";
@@ -385,7 +411,6 @@
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
-      --tw-border-style: solid;
       --tw-font-weight: initial;
     }
   }
