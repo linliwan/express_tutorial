@@ -45,6 +45,14 @@ container.appendChild(blogList);
 
 
 function deleteBlog(blogId: number, limit: number, offset: number) {
+    // 这里最简单的实现方式是采用浏览器自带的confirm对话框
+    // if (confirm("Are you sure you want to delete this blog?")) {
+    //     // 删除blog的代码逻辑
+    //     console.log(`Deleting blog with ID: ${blogId}`);
+    // }
+    // 但是浏览器自带的confirm对话框样式比较丑，而且不能自定义，所以用户体验不好，可以先用这个方法实现一下，后面再改进
+
+    // 我现在采用一种相对复杂一点的方式，自己实现一个遮罩层和确认对话框
     overlay.style.display = "block"; // Show the overlay
     cancelButton.onclick = () => {
         overlay.style.display = "none"; // Hide the overlay on cancel
@@ -109,7 +117,6 @@ async function fetchAndRenderBlogs(limit: number = 10, offset: number = 0) {
 
             infoDiv.appendChild(bloCreatedAt);
             infoDiv.appendChild(blogTitle);
-
 
             const buttonDiv = document.createElement("div");
             buttonDiv.classList.add("buttonDiv");
